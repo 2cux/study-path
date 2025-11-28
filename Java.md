@@ -50,7 +50,7 @@ public class Shop {
 ```
 
 
-## 2.利用单利类实现唯一的皇帝
+## 2.利用单例类实现唯一的皇帝
 代码如下:
 ```
 public class Emperor {
