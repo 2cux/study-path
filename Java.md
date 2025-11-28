@@ -1,6 +1,37 @@
 # java的学习
 
 
+## 利用多态(接口类)实现USB接口的功能(2025.11.28)
+代码如下：
+```
+interface USB{
+    void connect();
+}
+
+class Mouse implements USB{
+    @Override
+    public void connect(){
+        System.out.println("鼠标被激活");
+    }
+}
+
+class Keyboard implements USB{
+    @Override
+    public void connect(){
+        System.out.println("键盘被激活");
+    }
+}
+
+public class Computer {
+    public static void main(String[] args){
+        USB u1 = new Mouse();
+        u1.connect();
+        USB u2 = new Keyboard();
+        u2.connect();
+    }
+}
+```
+
 ## 利用多态(抽象类父类)实现辨别动物(2025.11.28)
 代码如下：
 ```
