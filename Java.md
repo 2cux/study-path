@@ -48,3 +48,27 @@ public class Shop {
     }
 }
 ```
+
+
+## 2.利用单利类实现唯一的皇帝
+代码如下:
+```
+public class Emperor {
+    private static final Emperor instance = new Emperor();//构造私有的唯一对象
+
+private Emperor(){
+
+    }//私有的构造方法
+    public static Emperor getInstance(){
+        return instance;
+    }
+}
+
+class Test{
+    public static void main(String[] args){
+        Emperor e1 = Emperor.getInstance();
+        Emperor e2 = Emperor.getInstance();
+        System.out.println(e1 == e2);//输出true
+    }
+}
+```
