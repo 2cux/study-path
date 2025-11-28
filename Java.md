@@ -1,6 +1,45 @@
 # java的学习
 
 
+## 利用多态(抽象类父类)实现辨别动物(2025.11.28)
+代码如下：
+```
+abstract class Animal{
+    //普通方法，每个人都一样，直接写
+    public void sleep(){
+        System.out.println("睡觉");
+    }
+
+    //抽象方法,因为你是抽象的，所以你不能被定义
+    public abstract void bark();
+}
+
+//定义狗类
+class Dog extends Animal{
+    @Override
+    public void bark() {
+        System.out.println("汪汪汪！");
+    }
+}
+
+//定义猫类
+class Cat extends Animal{
+    @Override
+    public void bark() {
+        System.out.println("喵喵喵！");
+    }
+}
+public class Bark {
+    public static void main(String[] args){
+        //多态
+        Animal a1 = new Dog();
+        a1.bark();
+        Animal a2 = new Cat();
+        a2.bark();
+    }
+}
+```
+
 ## 利用单例类实现唯一的皇帝（2025.11.28）
 代码如下:
 ```
@@ -24,7 +63,7 @@ class Test{
 }
 ```
 
-## 利用多态实现多种支付方式(面向对象)（2025.11.27）
+## 利用多态(普通类父类)实现多种支付方式(面向对象)（2025.11.27）
 代码如下：
 ```
 class Payment {
