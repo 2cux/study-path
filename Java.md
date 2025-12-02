@@ -1,7 +1,7 @@
 # java的学习
 
 
-## 利用泛型方法实现多数据类型的swap
+## 利用泛型方法实现多数据类型的swap(2025.12.2)
 ```
 import java.util.Arrays;
 public class Swap {
