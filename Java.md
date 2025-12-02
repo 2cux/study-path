@@ -1,6 +1,31 @@
 # java的学习
 
 
+## 利用泛型方法实现多数据类型的swap
+```
+import java.util.Arrays;
+public class Swap {
+    //定义一个泛型方法，可以交换任何类型的数据
+    public static <T> void swap(T[] t,int i , int j){
+        T temp = t[i];
+        t[i] = t[j];
+        t[j] = temp;
+    }
+
+    public static void main(String[] args) {
+        //交换字符串类型
+        String[] str = {"a", "b","c"};
+        Swap.swap(str,0,1);
+        System.out.println(Arrays.toString(str));
+
+        //交换整形类型
+        Integer[] in = {1,3,5};
+        Swap.swap(in, 0, 1);
+        System.out.println(Arrays.toString(in));
+    }
+}
+```
+
 ## 利用多态(接口类)实现USB接口的功能(2025.11.28)
 代码如下：
 ```
