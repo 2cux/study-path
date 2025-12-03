@@ -1,7 +1,50 @@
 # java的学习
 
 
-## 利用泛型方法实现多数据类型的swap(2025.12.2)
+## 集合框架的综合利用(2025.12.03)
+```
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+//定义一个学生类
+class Student{
+   private int id;
+   private String name;
+   private int age;
+   //构造方法
+   public Student(int id, String name, int age) {
+      this.id = id;
+      this.name = name;
+      this.age = age;
+   }
+   //访问方式
+   public int getId(){return id;}
+   public String getName(){return name;}
+}
+
+public class Collection {
+   public static void main(String[] args) {
+      List<Student> list = new ArrayList<>();
+      //创建学生对象
+      Student s1 = new Student(001,"张三", 18);
+      Student s2 = new Student(002, "李四", 18);
+      Student s3 = new Student(003,"王麻子", 18);
+      //所有方法都必须在main函数里执行
+      list.add(s1);
+      list.add(s2);
+      list.add(s3);
+      //List转换为Map
+      Map<Integer,String> map = list.stream()
+              .collect(Collectors.toMap(Student::getId,Student::getName));
+      //测试转换的结果
+      System.out.println(map.get(001));
+   }
+}
+```
+
+## 利用泛型方法实现多数据类型的swap(2025.12.02)
 ```
 import java.util.Arrays;
 public class Swap {
