@@ -35,7 +35,7 @@ public class Collection {
       list.add(s1);
       list.add(s2);
       list.add(s3);
-      //List转换为Map
+      //List转换为Map,链式写法
       Map<Integer,String> map = list.stream()
               .collect(Collectors.toMap(Student::getId,Student::getName));
       //测试转换的结果
